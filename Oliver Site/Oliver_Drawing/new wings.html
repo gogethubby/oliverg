@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Butterfly Animation</title>
+
+  <style>
+    .container {
+      position: relative;
+      margin: 150px auto;
+      width: 500px;
+      height: 400px;
+      overflow: visible;
+      border: 1px solid #aaa;
+      border-radius: 12px;
+      background: linear-gradient(to top, #aee1f9 0%, #f9f9f9 100%);
+    }
+
+    .bfly {
+      position: absolute;
+      width: 160px;
+      height: 160px;
+      pointer-events: none;
+      overflow:visible;
+    }
+    @font-face {
+  font-family: "Flowers Power"; /* use quotes if the name has spaces */
+  src: url("fonts/flowers_power.woff2") format("woff2"),
+       url("fonts/flowers_power.woff") format("woff"),
+       url("fonts/flowers_power.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1 {
+  position: absolute;
+  margin-left: 277px;
+  margin-top: 44px;
+  font-family: "Flowers Power", serif; /* must match the @font-face name */
+  font-size: 33px;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Spring Time!</h1>
+    <!-- Butterfly -->
+    <div class="bfly" id="butterflyContainer">
+      <!--<svg viewBox="0 0 200 200" width="60" height="60"> -->
+        <svg viewBox="-200 -200 320 300"  width="120" height="120">
+        <g id="butterfly">
+          <!-- Left Wing -->
+          <path id="leftWing" fill="#ff9500" 
+                d="M0,0 C-40,-60 -80,-40 -40,-10 C-60,20 -30,30 0,0" />
+          <!-- Right Wing -->
+          <path id="rightWing" fill="#ff9500" 
+                d="M0,0 C40,-60 80,-40 40,-10 C60,20 30,30 0,0" />
+          <!-- Body -->
+          <ellipse fill="#2353008a" cx="0" cy="0" rx="8" ry="20" />
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ✅ Correct GSAP CDN -->
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js"></script>
+  <script>
+    gsap.registerPlugin(MotionPathPlugin);
+
+    /*const containerWidth = 500;
+    const containerHeight = 400;
+    const butterflySize = 120;
+
+    // Function to generate random waypoints inside container
+    function generateRandomPath(points = 6) {
+      const path = [];
+      for (let i = 0; i < points; i++) {
+        path.push({
+          x: Math.random() * (containerWidth - butterflySize),
+          y: Math.random() * (containerHeight - butterflySize)
+        });
+      }
+      return path;
+    } */
+    const containerWidth = 500;
+    const containerHeight = 400;
+    const butterflySize = 120;
+
+    // Generate random waypoints inside container
+    function generateRandomPath(points = 6) {
+      const path = [];
+      for (let i = 0; i < points; i++) {
+        path.push({
+          x: Math.random() * (containerWidth - butterflySize),
+          y: Math.random() * (containerHeight - butterflySize)
+        });
+      }
+      return path;
+    }
+
+    function animateButterfly() {
+      const randomDuration = gsap.utils.random(5, 12); // between 5s and 12s
+
+      gsap.to("#butterflyContainer", {
+        duration: randomDuration,
+        motionPath: {
+          path: generateRandomPath(),
+          curviness: 1.5,
+          autoRotate: true
+        },
+        ease: "power1.inOut",
+        onComplete: animateButterfly // repeat with new path + new speed
+      });
+    }
+
+    function animateButterfly() {
+      gsap.to("#butterflyContainer", {
+        duration: 8,
+        motionPath: {
+          path: generateRandomPath(),
+          curviness: 1.5,
+          autoRotate: true
+        },
+        ease: "power1.inOut",
+        onComplete: animateButterfly // generate a new random path after each flight
+      });
+    }
+
+    animateButterfly();
+
+    // Fluttering flight path
+    gsap.to("#butterflyContainer", {
+      duration: 10,
+      repeat: -1,
+      ease: "power1.inOut",
+      motionPath: {
+        path: [
+          {x: 50, y: 50},
+          {x: 200, y: 120},
+          {x: 100, y: 200},
+          {x: 350, y: 100},
+          {x: 250, y: 250},
+          {x: 230, y: 180}
+        ],
+        curviness: 1.5,
+        autoRotate: true
+      }
+    });
+
+    // Wing flapping animation
+    gsap.to("#leftWing", {
+      rotation: 20,
+      transformOrigin: "100% 50%",
+      yoyo: true,
+      repeat: -1,
+      duration: 0.2,
+      ease: "sine.inOut"
+    });
+
+    gsap.to("#rightWing", {
+      rotation: -20,
+      transformOrigin: "0% 50%",
+      yoyo: true,
+      repeat: -1,
+      duration: 0.2,
+      ease: "sine.inOut"
+    });
+  </script>
+</body>
+</html>
+</body>
+</html>

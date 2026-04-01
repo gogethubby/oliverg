@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Oliver Gilreath • Art & Animation</title>
+  <style>
+    /* -------------------- GLOBAL -------------------- */
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(180deg, #d8d5d2 0%, #c7c5c3 100%);
+      font-family: Shiplap, sans-serif;
+      color: #2e2d2c;
+      overflow-x: hidden;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @font-face {
+      font-family: Shiplap;
+      src: url(Shiplap.otf);
+    }
+
+    @font-face {
+      font-family: Mathilda;
+      src: url(Mathilda.otf);
+    }
+
+    h1 {
+      font-family: Mathilda, serif;
+      font-size: 70px;
+      text-align: center;
+      margin: 40px auto 10px auto;
+      letter-spacing: 2px;
+    }
+
+    h2.tagline {
+      text-align: center;
+      margin-top: 0;
+      font-size: 20px;
+      font-family: Shiplap;
+      text-transform: uppercase;
+      color: #4a4a4a;
+      letter-spacing: 3px;
+      opacity: 0.8;
+    }
+
+    /* -------------------- NAVIGATION -------------------- */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin: 30px auto;
+      animation: slideDown 0.9s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    nav a {
+      text-decoration: none;
+      font-family: Shiplap;
+      text-transform: uppercase;
+      color: rgb(7, 69, 55);
+      position: relative;
+      font-size: 20px;
+    }
+
+    nav a::before {
+      content: "";
+      position: absolute;
+      left: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 12px;
+      height: 12px;
+      background: #333;
+      border-radius: 50%;
+      transition: 0.3s;
+    }
+
+    nav a:hover::before {
+      width: 18px;
+      height: 18px;
+      background: #0b9b63;
+    }
+
+    /* -------------------- MAIN ART SECTION -------------------- */
+    .hero {
+      max-width: 900px;
+      margin: 60px auto;
+      position: relative;
+      padding: 40px;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+      animation: fadeUp 1.2s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .hero img.main-art {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+    }
+
+    /* Butterfly */
+    #butterfly {
+      width: 120px;
+      height: 120px;
+      position: absolute;
+      top: 20px;
+      left: -150px;
+      filter: drop-shadow(0px 6px 6px rgba(0,0,0,0.4));
+    }
+
+    /* Spinner */
+    .overlay-spin {
+      position: absolute;
+      right: 179px;
+      top: 70px;
+      width: 70px;
+      height: 70px;
+    }
+
+    /* -------------------- MOON SCENE -------------------- */
+    .moon-section {
+      margin: 100px auto;
+      max-width: 700px;
+      position: relative;
+      text-align: center;
+      animation: fadeIn 1s ease 0.3s forwards;
+      opacity: 0;
+    }
+
+    .moon-section img {
+      width: 80%;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .cloud {
+position: absolute;
+top: 60px;
+opacity: 0.8;
+z-index: 5;
+pointer-events: none;
+}
+
+.cloud.c1 {
+left: 12%;
+top: 40px;
+width: 180px;
+opacity: 0.8;
+}
+.cloud.c2 {
+right: 10%;
+top: 70px;
+width: 210px;
+opacity: 0.7;
+}
+
+  </style>
+</head>
+<body>
+
+  <h1>Oliver Gilreath</h1>
+  <h2 class="tagline">Illustration • Animation • Creative Worlds</h2>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="about.html">About Me</a>
+    <a href="Oliver_Drawing/oliver_images/carousel.html">Drawings</a>
+    <a href="Oliver_Drawing/vgames/vgames.html">Video Games</a>
+    <a href="#">Chocolate Stuff</a>
+    <a href="Oliver_Drawing/oliver_images/quicksilver.html">Quicksilver</a>
+  </nav>
+
+  <!-- HERO ART + BUTTERFLY -->
+  <div class="hero">
+    <div id="butterfly">
+      <svg viewBox="44 22 320 300">
+        <g id="butterflyInner" transform="translate(100, 300)">
+          <path id="leftWing" fill="#4c4436" d="M0,0 C-40,-60 -80,-40 -40,-10 C-60,20 -30,30 0,0" />
+          <path id="rightWing" fill="#4c4436" d="M0,0 C40,-60 80,-40 40,-10 C60,20 30,30 0,0" />
+          <ellipse fill="#4e342e" cx="0" cy="0" rx="8" ry="20" />
+        </g>
+      </svg>
+    </div>
+
+    <img src="Oliver_Drawing/images/enhance_drwg_ab.jpg" class="main-art" alt="Drawing">
+
+    <img src="Oliver_Drawing/images/windwh.png" class="overlay-spin" alt="Spinner">
+  </div>
+
+  <!-- MOON SCENE -->
+  <div class="moon-section">
+    <img src="Oliver_Drawing/yellow_moon/ylw_moon_scene.jpg" alt="Moon scene">
+
+    <div class="cloud c1">
+      <svg width="120" height="120" viewBox="0 0 496 496">
+        <path fill="#40382f" stroke="none" d="M463.96,317.432C462.6,270.088,423.664,232,376,232c-33.72,0-63.928,18.928-78.744,48.776c-3.064-0.52-6.152-0.776-9.256-0.776c-21.76,0-41.408,12.664-50.576,32.056C207.736,313.408,184,337.984,184,368c0,30.88,25.128,56,56,56h200c30.872,0,56-25.12,56-56C496,346.256,483.344,326.616,463.96,317.432z"/>
+      </svg>
+    </div>
+
+    <div class="cloud c2">
+      <svg width="140" height="140" viewBox="0 0 496 496">
+        <path fill="#40382f"  stroke="none" d="M312,208c0-21.744-12.656-41.384-32.04-50.568C278.6,110.088,239.664,72,192,72c-33.72,0-63.928,18.928-78.744,48.776c-3.064-0.52-6.152-0.776-9.256-0.776c-21.76,0-41.408,12.664-50.576,32.056C23.736,153.408,0,177.984,0,208c0,30.88,25.128,56,56,56h200C286.872,264,312,238.88,312,208z"/>
+      </svg>
+    </div>
+  </div>
+
+
+  <script src="gsap.min.js"></script>
+  <script>
+    /* Spinner */
+    gsap.to('.overlay-spin', {
+      rotation: 360,
+      repeat: -1,
+      duration: 8,
+      ease: 'linear'
+    });
+
+    /* Butterfly Path */
+    gsap.to('#butterfly', {
+      x: 700,
+      y: 50,
+      duration: 14,
+      ease: 'power1.inOut',
+      repeat: -1,
+      yoyo: true
+    });
+
+    /* Wing flaps */
+    gsap.to('#leftWing', {
+      rotation: 20,
+      transformOrigin: '33% 100%',
+      yoyo: true,
+      repeat: -1,
+      duration: 0.25,
+      ease: 'sine.inOut'
+    });
+
+    gsap.to('#rightWing', {
+      rotation: -20,
+      transformOrigin: '33% 100%',
+      yoyo: true,
+      repeat: -1,
+      duration: 0.25,
+      ease: 'sine.inOut'
+    });
+
+    /* Clouds */
+    gsap.to('.c1', {
+      x: 20,
+      duration: 9,
+      repeat: -1,
+      yoyo: true,
+      ease: 'sine.inOut'
+    });
+
+    gsap.to('.c2', {
+      x: -140,
+      duration: 22,
+      repeat: -1,
+      yoyo: true,
+      ease: 'sine.inOut'
+    });
+  </script>
+</body>
+</html>

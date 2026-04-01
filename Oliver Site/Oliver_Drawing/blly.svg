@@ -1,0 +1,13 @@
+
+            <svg viewBox="0 0 200 200">
+                <g id="butterfly" transform="translate(100, 100)">
+                  <!-- Left Wing -->
+                  <path id="leftWing" fill="#f48fb1" d="M0,0 C-40,-60 -80,-40 -70,-10 C-60,20 -30,30 0,0" />
+                  
+                  <!-- Right Wing -->
+                  <path id="rightWing" fill="#f48fb1" d="M0,0 C40,-60 80,-40 70,-10 C60,20 30,30 0,0" />
+                  
+                  <!-- Body -->
+                  <ellipse fill="#4e342e" cx="0" cy="0" rx="5" ry="20" />
+                </g>
+              </svg>

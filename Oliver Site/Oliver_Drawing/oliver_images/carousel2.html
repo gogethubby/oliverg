@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Oliver's Gallery App</title>
+  <style>
+    body {
+      background: #ececec;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* ---------------- SIDEBAR ---------------- */
+    .sidebar {
+      width: 260px;
+      background: #1f1f1f;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      padding: 25px 20px;
+      overflow-y: auto;
+    }
+
+    .sidebar h2 {
+      margin-top: 0;
+      font-size: 1.4rem;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.05rem;
+      padding: 8px 5px;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      background: #00a6ff;
+    }
+
+    .thumb-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+      gap: 10px;
+    }
+
+    .thumb-grid img {
+      width: 100%;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.2s;
+      opacity: 0.85;
+    }
+
+    .thumb-grid img:hover {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+
+    /* ---------------- MAIN VIEWER ---------------- */
+    .viewer {
+      flex: 1;
+      background: #fafafa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .viewer img {
+      width: auto;
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 12px;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+      opacity: 0;
+      transform: scale(0.96);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    .viewer img:target {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .viewer img:first-child {
+      opacity: 1;
+      transform: scale(1);
+    }
+  </style>
+</head>
+<body>
+
+  <aside class="sidebar">
+    <h2>Oliver's Gallery</h2>
+
+    <div class="nav-links">
+      <a href="about.html">About Me</a>
+      <a href="./oliver_images/carousel.html">Drawings</a>
+      <a href="../vgames/vgames.html">Video Games</a>
+      <a href="">Chocolate Stuff</a>
+      <a href="quicksilver.html">Quicksilver</a>
+      <a href="../test.html">Home</a>
+    </div>
+
+    <div class="thumb-grid">
+      <a href="#image-1"><img src="cougar.jpg" alt="Cougar"></a>
+      <a href="#image-2"><img src="peacock.jpg" alt="Peacock"></a>
+      <a href="#image-3"><img src="pitcher_cup.jpg" alt="Pitcher & Cup"></a>
+      <a href="#image-4"><img src="redrbn.jpg" alt="Red Robin"></a>
+      <a href="#image-5"><img src="yarnball.jpg" alt="Yarnball"></a>
+    </div>
+  </aside>
+
+  <main class="viewer">
+    <img id="image-1" src="cougar.jpg" alt="Cougar" />
+    <img id="image-2" src="peacock.jpg" alt="Peacock" />
+    <img id="image-3" src="pitcher_cup.jpg" alt="Pitcher & Cup" />
+    <img id="image-4" src="redrbn.jpg" alt="Red Robin" />
+    <img id="image-5" src="yarnball.jpg" alt="Yarnball" />
+  </main>
+
+</body>
+</html>

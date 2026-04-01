@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quicksilver</title>
+    <style>
+        .row {
+            display: flex;              /* puts children side by side */
+            flex-wrap: nowrap;          /* prevents wrapping on small screens */
+            overflow-x: auto;           /* adds horizontal scroll if needed */
+            gap: 60px;                  /* space between cards */
+            padding: 20px;
+        }
+
+        .card {
+            flex: 0 0 auto;             /* keeps fixed width, prevents shrinking */
+            width: 250px;
+            text-align: center;
+            filter: drop-shadow(10px 10px 5px gray);
+            background: rgb(152, 189, 171);
+            border-radius: 12px;
+            padding: 10px;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .card h1 {
+            font-size: 18px;
+            margin: 10px 0 5px 0;
+        }
+        
+
+        .card p {
+            font-size: 14px;
+        }
+
+        body {
+            margin: 10px;
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+        }
+
+        .btn {
+      height: 12px;
+      width: 12px;
+      background-color: #333;
+      border-radius: 50%;
+      margin: 10px;
+    }
+
+        @font-face{
+        font-family:Shiplap;
+                src:url(../Shiplap.otf);
+    }
+
+    .text a {
+      color: rgb(7, 69, 55);
+      text-decoration: none;
+      font-family: Shiplap;
+      text-transform: uppercase;
+      font-size: 20px;
+    }
+    .item {
+      display: flex;
+      align-items: center;
+      margin-left: 20px;
+    }
+    </style>
+</head>
+<body>
+    <h2>
+        <div class="item">
+          <div class="btn"></div>
+          <div class="text"><a href="about.html">About Me</a></div>
+        </div>
+        <div class="item">
+          <div class="btn"></div>
+          <div class="text"><a href="../oliver_images/carousel.html">Drawings</a></div>
+        </div>
+        <div class="item">
+          <div class="btn"></div>
+          <div class="text"><a href="./vgames/vgames.html">Video Games</a></div>
+        </div>
+        <div class="item">
+          <div class="btn"></div>
+          <div class="text"><a href="">Chocolate Stuff</a></div>
+      </div>
+      <div class="item">
+          <div class="btn"></div>
+          <div class="text"><a href="quicksilver.html">Quicksilver</a></div>
+      </h2>
+          </div>
+          <h2> <a href="/index.html#"> Home </a></h2>
+    <div class="row">
+        <div class="card">
+            <img src="../images/playboy.jpg" alt="Playboy">
+            <h1>The Playboy</h1>
+            <p>This is my cat the playboy, Quicksilver. He's very playful and always up for a snack.</p>
+        </div>
+
+        <div class="card">
+            <img src="../images/kittyinabox.jpg" alt="Kitty in a Box">
+            <h1>Kitty in a Box</h1>
+            <p>Quicksilver loves boxes.</p>
+        </div>
+        <div class="card">
+            <img src="../images/catoutofbag.jpg" alt="Cat in bag">
+            <h1>Someone let him out of the bag.
+            </h1>
+            <p>This is what happens when the cat is out of the bag</p>
+        </div>
+        <div class="card">
+            <img src="../images/kittydrawer.jpg" alt="Cat in bag">
+            <h1>He's really a spy.
+            </h1>
+            <p>Here he is again. Always spying, always eavesdropping. There are no secrets with this</p>
+        </div>
+    </div>
+</body>
+</html>

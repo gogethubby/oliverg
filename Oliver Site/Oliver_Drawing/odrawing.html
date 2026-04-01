@@ -1,0 +1,87 @@
+<!doctype <!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <style>
+
+            body{
+                background-color: #C7C5C3;
+            }
+            
+            .drwg{
+                margin-top: 107px;
+                margin-left: 177px;
+                filter: drop-shadow(22px 10px 4px #616163);
+
+            }
+
+            .overlay{
+                position: absolute;
+                margin-left: 541px;
+                margin-top: -375px;
+                z-index: 1;
+
+               
+            }
+
+            @font-face {
+            font-family: Mathilda;
+                src:url(Mathilda.otf);
+            }
+            h1{
+
+                position:absolute;
+                margin-left: 588px;
+                margin-top: 404px;
+                font-family: Mathilda;
+                font-size: 54px;
+                
+            }
+        </style>
+       
+           
+          
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+
+       
+
+        <h1> Oliver Gilreath</h1>
+        <div class="drwg">
+        <img src="images/enhance_drwg_a.jpg" width="500" width="376">
+        </div>
+
+        
+
+        <div class="overlay">
+
+            <img src="images/windwh.png" height="62" width="62">
+        </div>
+       
+        
+         <script src="gsap.min.js"> </script>
+            <script>
+            
+                gsap.from(".overlay", {
+                    rotation:-360,
+                    duration: 6,
+                    repeat: -1,
+                    ease: "linear",
+                    transformOrigin: "center",
+  
+                });</script>
+
+
+
+    </body>
+</html>
