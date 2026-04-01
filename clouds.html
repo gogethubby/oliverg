@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+.sky-container {
+  width: 100%;
+  height: 100vh; /* or any desired height */
+  position: relative;
+  overflow: hidden; /* hides clouds outside the container */
+  background-color: #87ceeb; /* a nice sky color */
+}
+
+.cloud {
+  position: absolute;
+  /* Add your cloud styling (e.g., background-color, border-radius, width, height) */
+  /* For a simple cloud, you can use CSS shapes or an image */
+  background-color: white;
+  border-radius: 50% 50% 0 0;
+  width: 100px;
+  height: 40px;
+  opacity: 0; /* start them hidden */
+}
+/* You can add more complex CSS for a better cloud appearance */
+
+        </style>
+    </head>
+
+    <body>
+        <div class="sky-container">
+            <!-- Clouds will be generated here by JavaScript -->
+          </div>
+
+          <script>
+            // Make sure to include the GSAP library in your project (e.g., via a script tag)
+
+function animateClouds() {
+  const container = document.querySelector('.sky-container');
+  const numClouds = 10;
+  const containerWidth = container.offsetWidth;
+  const containerHeight = container.offsetHeight;
+
+  for (let i = 0; i < numClouds; i++) {
+    // 1. Create a cloud element
+    const cloud = document.createElement('div');
+    cloud.classList.add('cloud');
+    container.appendChild(cloud);
+
+    // 2. Set initial random position and opacity
+    // GSAP's set() is good for this
+    gsap.set(cloud, {
+      x: gsap.utils.random(-200, containerWidth), // Start position off-screen left or within
+      y: gsap.utils.random(0, containerHeight - 50), // Random vertical position
+      opacity: 0,
+      scale: gsap.utils.random(0.5, 1.5) // Random size
+    });
+
+    // 3. Create the animation for each cloud
+    // Use a GSAP timeline for better control and seamless looping
+    const cloudTl = gsap.timeline({
+      repeat: -1, // Infinite loop
+      delay: gsap.utils.random(0, 10) // Random start delay so they don't all appear at once
+    });
+
+    cloudTl.to(cloud, {
+      opacity: 1,
+      duration: 1.5,
+      ease: "power1.out"
+    })
+    .to(cloud, {
+      x: containerWidth + 200, // Move completely off-screen to the right
+      duration: gsap.utils.random(20, 50), // Random duration for varied speed
+      ease: "none", // Linear ease for constant movement
+      onComplete: () => {
+        // When animation finishes, reset position to the left for a seamless loop
+        gsap.set(cloud, {
+            x: -200,
+            y: gsap.utils.random(0, containerHeight - 50), // New random vertical position
+            scale: gsap.utils.random(0.5, 1.5) // New random size
+        });
+      }
+    }, 0) // Start this tween at the beginning of the timeline (position 0)
+    .to(cloud, {
+      opacity: 0,
+      duration: 1.5,
+      ease: "power1.in"
+    }, "-=1.5"); // Fade out 1.5 seconds before the end of the movement tween
+  }
+}
+
+// Initialize the animation
+animateClouds();
+
+          </script>
+          
+    </body>
+</html>
