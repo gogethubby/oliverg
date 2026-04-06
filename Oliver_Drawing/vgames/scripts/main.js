@@ -8,10 +8,10 @@ window.onload=function(){
     tl.to("#photo1",0.4,{opacity:0}, "-=0.4")
 
       tl.to("#photo2",0.4,{opacity:1}, "-=0.4")
-      tl.to("#photo2",2,{ease:Linear.easeNone, left:0}, "-=0.4")
+      tl.to("#photo2",4,{ease:Linear.easeNone, left:0}, "-=0.4")
 
       tl.to("#photo3",0.4,{opacity:1}, "-=0.4")
-      tl.to("#photo3",2,{ease:Linear.easeNone, left:-300}, "-=0.4")
+      tl.to("#photo3",4,{ease:Linear.easeNone, left:-300}, "-=0.4")
 
       tl.to("#photo4",0.4,{opacity:1}, "-=0.4")
 

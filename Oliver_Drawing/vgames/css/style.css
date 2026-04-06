@@ -57,7 +57,7 @@ opacity:0;
 
 }
 #top-section .big-txt{
-font-size:146px;
+font-size:110px;
 color:#fff;
 font-family: 'tt_masters';
 
@@ -135,7 +135,7 @@ top:272px;
   #percent-txt{
     position:absolute;
     top:114px;
-    width:100px;
+    width:68px;
     text-align:center;
     -ms-transform:rotate(-12.7deg) scale(1,1);
     -webkit-transform: rotate(-12.7deg)scale(1,1);

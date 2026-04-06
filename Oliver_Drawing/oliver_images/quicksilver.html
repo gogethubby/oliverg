@@ -12,7 +12,8 @@
         }
 
         .card {
-            flex: 0 0 auto;             /* keeps fixed width, prevents shrinking */
+            
+            flex-direction: column;        /* keeps fixed width, prevents shrinking */
             width: 250px;
             text-align: center;
             filter: drop-shadow(10px 10px 5px gray);
@@ -22,19 +23,26 @@
         }
 
         .card img {
+           
             width: 100%;
             height: auto;
             border-radius: 8px;
+            display:block;
+            order: 3;
+
         }
 
         .card h1 {
             font-size: 18px;
             margin: 10px 0 5px 0;
+            order: 1;
         }
         
 
         .card p {
             font-size: 14px;
+            display: flex;
+            order: 2;
         }
 
         body {
@@ -68,6 +76,11 @@
       align-items: center;
       margin-left: 20px;
     }
+    h6{
+
+margin-top: 100px;
+text-align: center;
+}
     </style>
 </head>
 <body>
@@ -82,7 +95,7 @@
         </div>
         <div class="item">
           <div class="btn"></div>
-          <div class="text"><a href="./vgames/vgames.html">Video Games</a></div>
+          <div class="text"><a href="../vgames/vgames.html">Video Games</a></div>
         </div>
         <div class="item">
           <div class="btn"></div>
@@ -118,6 +131,15 @@
             </h1>
             <p>Here he is again. Always spying, always eavesdropping. There are no secrets with this</p>
         </div>
-    </div>
+        <div class="card">
+            <h1>The escape plan</h1>
+            <p>Sometimes I think he pretends to be pretends to be a captive at Animal Control and pretends to make a jail break</p>
+            <img src="../images/bagacat.jpg" alt="Cat in bag">
+        </div>
+       
+       </div>
+    </div> 
 </body>
+
+<h6> © 2026 Oliver Gilreath   All rights reserved.</h6>
 </html>
